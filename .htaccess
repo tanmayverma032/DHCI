@@ -1,0 +1,138 @@
+# =============================================
+# BLOCK ACCESS TO SENSITIVE FILES
+# =============================================
+
+# Block access to .env file
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Block access to wp-config (WordPress protection)
+<Files wp-config.php>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Block access to .htaccess itself
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# =============================================
+# DISABLE DIRECTORY BROWSING
+# =============================================
+
+Options -Indexes
+
+# =============================================
+# MIME TYPE FIX - FOR CSS AND OTHER FILES
+# =============================================
+
+# Force correct MIME types for static files
+AddType text/css .css
+AddType application/javascript .js
+AddType image/jpeg .jpg .jpeg
+AddType image/png .png
+AddType image/gif .gif
+AddType image/svg+xml .svg
+AddType application/json .json
+AddType font/woff .woff
+AddType font/woff2 .woff2
+AddType font/ttf .ttf
+AddType application/vnd.ms-fontobject .eot
+
+# Force CSS files to be served with correct MIME type
+<FilesMatch "\.(css)$">
+    ForceType text/css
+    Header set Content-Type "text/css"
+</FilesMatch>
+
+# Force JS files to be served with correct MIME type
+<FilesMatch "\.(js)$">
+    ForceType application/javascript
+    Header set Content-Type "application/javascript"
+</FilesMatch>
+
+# =============================================
+# SECURITY HEADERS
+# =============================================
+
+<IfModule mod_headers.c>
+    # Fix MIME type errors
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Security headers
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Cache control for static files
+    <FilesMatch "\.(css|js|jpg|jpeg|png|gif|svg|ico|webp|woff|woff2|ttf|eot)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>
+
+# =============================================
+# DISABLE PHP EXECUTION IN UPLOADS
+# =============================================
+
+<Directory "/wp-content/uploads/">
+    php_admin_flag engine off
+</Directory>
+
+# =============================================
+# MAIN URL REWRITE RULES (CodeIgniter / PHP)
+# =============================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Remove index.php from URLs (CodeIgniter)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+
+    # Block suspicious query string requests
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    RewriteRule .* index.php [F,L]
+
+    # Block access to sensitive directories
+    RewriteRule ^(application|system|config|database|vendor)/ - [F,L]
+    
+    # Block access to .git directory
+    RewriteRule ^\.git/ - [F,L]
+</IfModule>
+
+# =============================================
+# PREVENT HOTLINKING (Optional)
+# =============================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_REFERER} !^$
+    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?dhciindia\.com/ [NC]
+    RewriteRule \.(jpg|jpeg|png|gif|svg|webp)$ - [F,L]
+</IfModule>
+
+# =============================================
+# ERROR DOCUMENTS (Optional)
+# =============================================
+
+ErrorDocument 404 /index.php
+ErrorDocument 403 /index.php
+ErrorDocument 500 /index.php
+
+# =============================================
+# COMPRESSION (Optional - Improve Performance)
+# =============================================
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+    AddOutputFilterByType DEFLATE application/rss+xml application/atom+xml
+</IfModule>

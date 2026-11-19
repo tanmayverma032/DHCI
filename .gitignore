@@ -1,0 +1,39 @@
+# CodeIgniter 4 Environment & Secrets
+.env
+*.env.backup
+
+# Redundant archives & backup files
+_public_html.zip
+*.zip
+*.tar.gz
+*.rar
+
+# Runtime generated writable data
+/writable/cache/*
+!/writable/cache/index.html
+!/writable/cache/.gitkeep
+/writable/debugbar/*
+!/writable/debugbar/index.html
+!/writable/debugbar/.gitkeep
+/writable/logs/*
+!/writable/logs/index.html
+!/writable/logs/.gitkeep
+/writable/session/*
+!/writable/session/index.html
+!/writable/session/.gitkeep
+/writable/uploads/*
+!/writable/uploads/index.html
+!/writable/uploads/.gitkeep
+
+# Sensitive and excessively large uploaded files (>100MB / PII resumes)
+/uploads/resume/*
+!/uploads/resume/.gitkeep
+/uploads/studymaterials/*
+!/uploads/studymaterials/.gitkeep
+
+# Operating System & IDE Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/

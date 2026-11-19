@@ -1,0 +1,1071 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="google-site-verification" content="gsJbej39-J6OZdFZ7dI5T10aqOWFneCTTfCKddHkSPo" />
+  <meta name="facebook-domain-verification" content="yume6yqy3ggseyrydcm9glgpmoc4e4" />
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Online Result - Lingaya's Vidyapeeth" />
+  <title>Online Result - Lingaya's Vidyapeeth</title>
+  <link rel="shortcut icon" href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2021/06/cropped-logo-1.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KF2ZCWKK');
+  </script>
+  <!-- End Google Tag Manager -->
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      color: #555;
+      overflow-x: hidden;
+    }
+
+    .name {
+      font-size: 1.5em;
+      font-weight: 600;
+      color: #f48533;
+    }
+
+    .btn-danger {
+      background-color: #f48533;
+      border-color: #f48533;
+    }
+
+    .btn-danger:hover {
+      background-color: #0f172a;
+      border-color: #0f172a;
+    }
+
+    .lvtag {
+      font-size: 0.7em;
+    }
+
+    #container-box {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .result-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0;
+      list-style: none;
+    }
+
+    .result-info li {
+      width: 70%;
+      margin-bottom: 0.5em;
+      font-size: 0.8em;
+    }
+
+    .result-info li:nth-child(even) {
+      width: 30%;
+    }
+
+    .logo img {
+      width: 120px;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      height: 100%;
+    }
+
+    .table {
+      font-size: 0.8em;
+    }
+
+    .table th,
+    .table td {
+      padding: 0.4em;
+    }
+
+    /* loader */
+    .loader_9 {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      z-index: 9999;
+    }
+
+    .lds-facebook {
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 80px;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+    }
+
+    .lds-facebook div {
+      display: inline-block;
+      position: absolute;
+      left: 8px;
+      width: 16px;
+      background: #1c8eb0;
+      animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+    }
+
+    .lds-facebook div:nth-child(1) {
+      left: 8px;
+      animation-delay: -0.24s;
+    }
+
+    .lds-facebook div:nth-child(2) {
+      left: 32px;
+      animation-delay: -0.12s;
+    }
+
+    .lds-facebook div:nth-child(3) {
+      left: 56px;
+      animation-delay: 0;
+    }
+
+    @keyframes lds-facebook {
+      0% {
+        top: 8px;
+        height: 64px;
+      }
+
+      50%,
+      100% {
+        top: 24px;
+        height: 32px;
+      }
+    }
+
+    @media print {
+      #result-box tr th {
+        background-color: #50a6ea !important;
+        color: #fff !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact !important;
+      }
+    }
+
+    .form-control {
+      width: 50%;
+      font-size: 0.8em;
+      color: #555555;
+      border: 1px solid #ced4da;
+      border-radius: 0;
+      margin: auto;
+      padding: 3px 3px;
+    }
+
+    .form-group {
+      margin-bottom: 6px;
+    }
+
+    .notification {
+      margin-top: 3em;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+      height: auto
+    }
+
+    @media only screen and (max-width: 600px) {
+      /* #footer {
+        position: relative !important;
+      } */
+
+      .form-control {
+        width: 75%;
+        padding: 8px 8px;
+      }
+
+      .result-info {
+        padding: 0 0.5em;
+      }
+
+      .result-info li {
+        width: 50%;
+        font-size: 0.7em;
+      }
+
+      .result-info li:nth-child(even) {
+        width: 50%;
+      }
+
+      .table {
+        font-size: 0.7em;
+      }
+
+
+      #note {
+        font-size: 0.7em !important;
+      }
+
+      #result-box,
+      #note {
+        padding: 0 0.5em;
+      }
+
+      .name {
+        font-size: 1em;
+      }
+
+      .lvtag {
+        font-size: 0.6em;
+      }
+
+      .notification {
+        margin-top: 1em;
+      }
+
+      .notification p {
+        text-align: center;
+      }
+    }
+
+    #note {
+      font-size: 0.8em;
+    }
+
+    .abb {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1.5em;
+    }
+
+    .abb li {
+      margin-bottom: 5px;
+    }
+
+    .form-control:focus {
+      border-color: #f48533;
+      box-shadow: none
+    }
+
+    ol li {
+      font-size: 0.9em;
+      margin-bottom: 0.2em;
+    }
+
+    .info {
+      height: 400px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KF2ZCWKK"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="loader loader_9" style="display: none">
+    <div class="lds-facebook">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <section class="head mt-0" id="loginwindow">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <div class="text-center">
+          <div class="logo">
+            <img
+              src="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2024/12/lingayasvidyapeethlogo.webp"
+              alt="logo" />
+          </div>
+          <div class="name">Lingaya's Vidyapeeth, Faridabad</div>
+          <div class="lvtag">(Formerly Lingaya's University)</div>
+          <div class="lvtag">
+            (Deemed to be University, Approved u/s 3 of UGC Act, 1956)
+          </div>
+          <div style="font-weight: 600;margin-top: 15px;color: #000;">ONLINE RESULT</div>
+        </div>
+        <form id="result-form" class="form" action="#" method="post">
+          <p id="msg" style="color: rgb(128, 0, 0);text-align: center;"></p>
+          <div class="form-group">
+            <input type="text" name="regno" id="regno" class="form-control" placeholder="Regn Number" required />
+          </div>
+          <div class="form-group">
+            <input type="text" name="rollno" id="rollno" class="form-control" placeholder="Roll Number" required />
+          </div>
+          <div class="form-group">
+            <select class="form-control" name="semester" id="semester" required>
+            </select>
+          </div>
+          <div class="form-group">
+            <select class="form-control" name="examination" id="examination" required>
+            </select>
+          </div>
+          <div class="form-group">
+            <select class="form-control" name="examtype" id="examtype" required>
+            </select>
+          </div>
+          <div class="form-group text-center mt-3">
+            <button type="submit" name="submit" class="btn btn-sm btn-danger">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6" style="border-left: 1px solid #555; margin-bottom: 1em;">
+        <div class="notification">
+          <p>
+            <b style="color: #f48533;">Result Declared:-</b>
+          </p>
+          <div class="info">
+            <p><b>December 2025 Results:</b></p>
+            <ol>
+              <li>B.Sc.-OTT, 1st Sem, December, 2025, 16-02-2026</li>
+              <li>B.Sc.(H)-OTT, 1st Sem, December, 2025, 16-02-2026</li>
+              <li>B.Sc.-RMIT, 1st Sem, December, 2025, 16-02-2026</li>
+
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/B.Ed-1st-Sem-December-2025-16-02-2026.pdf" target="_blank">B.Ed - 1st Sem, December, 2025, 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/B.Ed-3rd-Sem-December-2025-16-02-2026.pdf" target="_blank">B.Ed - 3rd Sem, December, 2025, 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/M.Ed-3rd-Sem-December-2025-16-02-2026.pdf" target="_blank">M.Ed - 3rd Sem, December, 2025, 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-Appear-Result-Department-of-Agriculture-16-02-2026.pdf" target="_blank">Re-Appear Result - Department of Agriculture, 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-Appear-Result-Department-of-Architecture-16-02-2026.pdf" target="_blank">Re-Appear Result - Department of Architecture, 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-Appear-Result-Department-of-B.Sc-Biotechnology-16-02-2026.pdf" target="_blank">Re-Appear Result - Department of B.Sc (Biotechnology), 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-Appear-Result-Department-of-BA-English-16-02-2026.pdf" target="_blank">Re-Appear Result - Department of BA (English), 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-Appear-Result-Department-of-BA-Psychology-16-02-2026.pdf" target="_blank">Re-Appear Result - Department of BA (Psychology), 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-Appear-Result-Department-of-Basic-Science-Applied-Sciences-16-02-2026.pdf" target="_blank">Re-Appear Result - Department of Basic Science & Applied Sciences, 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-appear-Result-Department-of-Commerce-Management-16-02-2026.pdf" target="_blank">Re-appear Result - Department of Commerce & Management, 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-Appear-Result-Department-of-Education-16-02-2026.pdf" target="_blank">Re-Appear Result - Department of Education, 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-appear-Result-Department-of-Law-16-02-2026.pdf" target="_blank">Re-appear Result - Department of Law, 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-appear-Result-Department-of-Pharmacy-B.Pharm-16-02-2026.pdf" target="_blank">Re-appear Result - Department of Pharmacy (B.Pharm), 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-appear-Result-Department-of-Pharmacy-D.Pharm-16-02-2026.pdf" target="_blank">Re-appear Result - Department of Pharmacy (D.Pharm), 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-appear-Result-Department-of-BCA-MCA-BScCS-16-02-2026.pdf" target="_blank">Re-appear Result- Department of BCA & MCA & BSc(CS), 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-appear-Result-Department-of-Computer-Science-and-Engineering-16-02-2026.pdf" target="_blank">Re-appear Result- Department of Computer Science and Engineering, 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-appear-Result-Department-of-Mechanical-Engineering-16-02-2026.pdf" target="_blank">Re-appear Result- Department of Mechanical Engineering, 16-02-2026</a></li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/02/Re-appear-Result-B.Voc-DT-16-02-2026.pdf" target="_blank">Re-appear Result - B.Voc (DT), 16-02-2026</a></li>
+              <li>B.Com.-LD, 1st Sem, December, 2025, 11-02-2026</li>
+              <li>BBA-LD, 1st Sem, December, 2025, 11-02-2026</li>
+              <li>BBA-LD, 3rd Sem, December, 2025, 11-02-2026</li>
+              <li>BBA-LD, 5th Sem, December, 2025, 11-02-2026</li>
+              <li>LL.M, 1st Sem, December, 2025, 11-02-2026</li>
+              <li>BA(H)English, 1st Sem, December, 2025, 11-02-2026</li>
+              <li>BA(H)English, 3rd Sem, December, 2025, 11-02-2026</li>
+              <li>BA(H)English, 5th Sem, December, 2025, 11-02-2026</li>
+              <li>B.Sc.(H)-OTT, 3rd Sem, December, 2025, 11-02-2026</li>
+              <li>B.Sc.-OTT, 3rd Sem, December, 2025, 11-02-2026</li>
+              <li>B.Sc.(H)-OTT, 2nd Sem, December, 2025, 11-02-2026</li>
+              <li>B.Sc.-OTT, 2nd Sem, December, 2025, 11-02-2026</li>
+              <li>B.Sc.(H)-RMIT, 3rd Sem, December, 2025, 11-02-2026</li>
+              <li>B.Sc.-RMIT, 3rd Sem, December, 2025, 11-02-2026</li>
+              <li>B.Sc.(H)-RMIT, 2nd Sem, December, 2025, 11-02-2026</li>
+              <li>B.Sc.-RMIT, 2nd Sem, December, 2025, 11-02-2026</li>
+              <li>BCA, 3rd Sem, December, 2025, 11-02-2026</li>
+              <li>BCA, 1st Sem, December, 2025, 11-02-2026</li>
+              <li>BCA-LD, 1st Sem, December, 2025, 11-02-2026</li>
+              <li>B.Com, 1st Sem, December, 2025, 10-02-2026</li>
+              <li>B.Com, 3rd Sem, December, 2025, 10-02-2026</li>
+              <li>B.Com, 5th Sem, December, 2025, 10-02-2026</li>
+              <li>BBA, 1st Sem, December, 2025, 10-02-2026</li>
+              <li>BBA, 3rd Sem, December, 2025, 10-02-2026</li>
+              <li>BBA, 5th Sem, December, 2025, 10-02-2026</li>
+              <li>BBA-MBA, 5th Sem, December, 2025, 10-02-2026</li>
+              <li>MBA, 1st Sem, December, 2025, 10-02-2026</li>
+              <li>MBA, 3rd Sem, December, 2025, 10-02-2026</li>
+              <li>BBA-MBA, 7th Sem, December, 2025, 10-02-2026</li>
+              <li>B.Tech.-CE, 1st Sem, December, 2025, 10-02-2026</li>
+              <li>B.Tech.-CSE, 1st Sem, December, 2025, 10-02-2026</li>
+              <li>B.Tech.-ECE, 1st Sem, December, 2025, 10-02-2026</li>
+              <li>B.Tech.-MAE, 1st Sem, December, 2025, 10-02-2026</li>
+              <li>B.Tech.-ME, 1st Sem, December, 2025, 10-02-2026</li>
+              <li>B.TECH.-CSE, 3rd Sem, December, 2025, 10-02-2026</li>
+              <li>BCA, 3rd Sem, December, 2025, 10-02-2026</li>
+              <li>BCA, 5th Sem, December, 2025, 10-02-2026</li>
+              <li>MCA, 3rd Sem, December, 2025, 10-02-2026</li>
+              <li>BA-LLB, 1st Sem, December, 2025, 10-02-2026</li>
+              <li>BA-LLB, 3rd Sem, December, 2025, 10-02-2026</li>
+              <li>BA-LLB, 5th Sem, December, 2025, 10-02-2026</li>
+              <li>BA-LLB, 7th Sem, December, 2025, 10-02-2026</li>
+              <li>BBA-LLB, 1st Sem, December, 2025, 10-02-2026</li>
+              <li>BBA-LLB, 3rd Sem, December, 2025, 10-02-2026</li>
+              <li>BBA-LLB, 5th Sem, December, 2025, 10-02-2026</li>
+              <li>BBA-LLB, 7th Sem, December, 2025, 10-02-2026</li>
+              <li>BBA-LLB, 9th Sem, December, 2025, 10-02-2026</li>
+              <li>LLB, 1st Sem, December, 2025, 10-02-2026</li>
+              <li>LLB, 3rd Sem, December, 2025, 10-02-2026</li>
+              <li>LLB, 5th Sem, December, 2025, 10-02-2026</li>
+              <li>BA(H)-Psychology, 1st Sem, December, 2025, 10-02-2026</li>
+              <li>BA(H)-Psychology, 3rd Sem, December, 2025, 10-02-2026</li>
+              <li>BA(H)-Psychology, 5th Sem, December, 2025, 10-02-2026</li>
+              <li>MA-Psychology, 3rd Sem, December, 2025, 10-02-2026</li>
+              <li>B.Sc.(H)Agriculture, 1st Sem, December, 2025, 10-02-2026</li>
+              <li>B.Sc.(H)Agriculture, 3rd Sem, December, 2025, 10-02-2026</li>
+              <li>B.Sc.(H)Agriculture, 5th Sem, December, 2025, 10-02-2026</li>
+              <li>M.Sc.(H)Agriculture, 1st Sem, December, 2025, 10-02-2026</li>
+              <li> BA(JMC), 1st Sem, December, 2025, 06-02-2026</li>
+              <li> BA(JMC), 3rd Sem, December, 2025, 06-02-2026</li>
+              <li> Advanced Diploma-EMT, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li> Advanced Diploma-DT, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li> Advanced Diploma-RMIT, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li> B.Pharmacy, 1st Sem, December, 2025, 06-02-2026</li>
+              <li> B.Pharmacy, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li> B.Pharmacy, 5th Sem, December, 2025, 06-02-2026</li>
+              <li> B.Pharmacy, 7th Sem, December, 2025, 06-02-2026</li>
+              <li> M.Pharmacy, 1st Sem, December, 2025, 06-02-2026</li>
+              <li> M.Pharmacy, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li> B.Tech.-ME, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li> B.Tech.-ME, 5th Sem, December, 2025, 06-02-2026</li>
+              <li> B.Tech.-CSE, 5th Sem, December, 2025, 06-02-2026</li>
+              <li> B.Tech.-CSE, 7th Sem, December, 2025, 06-02-2026</li>
+              <li> MCA, 1st Sem, December, 2025, 06-02-2026</li>
+              <li> B.Arch., 1st Sem, December, 2025, 06-02-2026</li>
+              <li> B.Arch., 3rd Sem, December, 2025, 06-02-2026</li>
+              <li> B.Arch., 5th Sem, December, 2025, 06-02-2026</li>
+              <li> M.Plan, 1st Sem, December, 2025, 06-02-2026</li>
+              <li> M.Plan, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li> B.Sc.(H)Agriculture, 7th Sem, December, 2025, 06-02-2026</li>
+              <li>B.Sc.(H)Biotechnology, 1st Sem, December, 2025, 06-02-2026</li>
+              <li>B.Sc.(H)Biotechnology, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li>MA-English, 1st Sem, December, 2025, 06-02-2026</li>
+              <li>MA-Psychology, 1st Sem, December, 2025, 06-02-2026</li>
+              <li>M.Sc. Chemistry, 1st Sem, December, 2025, 06-02-2026</li>
+              <li>M.Sc. Chemistry, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li>B.Sc.(H)Physics, 1st Sem, December, 2025, 06-02-2026</li>
+              <li>B.Sc.(H)Physics, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li>M.Sc. Physics, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li>B.Sc.(H)Chemistry, 1st Sem, December, 2025, 06-02-2026</li>
+              <li>B.Sc.(H)Chemistry, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li>B.Sc.(H)Mathematics, 1st Sem, December, 2025, 06-02-2026</li>
+              <li>B.Sc.(H)Mathematics, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li>B.Sc.-Fashion Design, 1st Sem, December, 2025, 06-02-2026</li>
+              <li>B.Sc.-Fashion Design, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li>B.Sc.(H)MLT, 5th Sem, December, 2025, 06-02-2026</li>
+              <li>B.Sc.(H)RMIT, 5th Sem, December, 2025, 06-02-2026</li>
+              <li> B.Tech.-MAE, 3rd Sem, December, 2025, 06-02-2026</li>
+              <li>B.Tech.-ME, 7th Sem, December, 2025, 06-02-2026</li>
+              <li><a href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2026/01/MOOC-Result-Dec-2025.pdf" target="_blank">MOOC Special Examinations (Dec, 2025).</a></li>
+            </ol>
+            <p><b>May 2025 Results:</b></p>
+            <ol>
+              <!-- <li><a target="_blank" href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2025/12/Result-B.Pharmacy-Special-Supplementary-Exam-November-2025-11.12.2025-min.pdf">Result B.Pharmacy Special Supplementary Exam (November, 2025) 11.12.2025 (Click Here)</a></li>
+              <li><a target="_blank" href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2025/12/Result-D.Pharmacy-Special-Supplementary-Exam-November-2025-11.12.2025-min.pdf">Result D.Pharmacy Special Supplementary Exam (November, 2025) 11.12.2025 (Click Here)</a></li> -->
+              <li><a target="_blank" href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2025/10/Result-Special-MOOC-Examination-September-2025.pdf">Result- Special MOOC Examination, September-2025 (Click Here)</a></li>
+              <li>Ph.D Course Work Examinations (August, 2025) 09-09-2025</li>
+              <li>Re-appear result (CS & ME) June-2025, 08-07-2025</li>
+              <li>Supplementary result (CS) July-2025, 08-08-2025</li>
+              <li>B.Arch 2nd Semester - May 2025 Revised Result (13-08-2024)</li>
+              <li>BA(H) English 2nd Semester - May 2025 Updated Result</li>
+              <li>B.Sc (H) Physics 2nd Semester - May 2025 (13-08-2025)</li>
+              <li>B.Sc (H) Mathematics 2nd Semester - May 2025 (13-08-2025)</li>
+              <li>B.Sc (H) Chemistry 2nd Semester - May 2025 (13-08-2025)</li>
+              <li>2024 BA (H) Interior Design & Product Design, 8th Semester - May 2025 (13-08-2025)</li>
+              <li>M.Plan 3rd Semester - December-2024 Revised Result (13-08-2024)</li>
+              <li><a target="_blank" href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2025/08/Result-Special-Supplementary-Exams-July-2025-English-Psychology-Education-M.Plan_.pdf">Result -Special Supplementary Exams (July-2025) (English-Psychology-Education-M.Plan) (Click Here)</a></li>
+              <li><a target="_blank" href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2025/08/B.-Pharmacy-Special-Supplementary-Examination-Result-July-2025.pdf">B. Pharmacy Special Supplementary Examination Result (July-2025) (Click Here)</a></li>
+              <li><a target="_blank" href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2025/08/D.-Pharmacy-Special-Supplementary-Examination-Result-July-2025.pdf">D. Pharmacy Special Supplementary Examination Result (July-2025) (Click Here)</a></li>
+              <li><a target="_blank" href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2025/08/SOCM-Results-of-Special-Supplementary-Examiantions-July-2025.pdf">Special Supplementary Results,School of Commerce & Management, July, 2025, 08-08-2025 (Click Here)</a></li>
+              <li><a target="_blank" href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2025/08/BAJMC-Results-of-Special-Supplementary-Examiantions-July-2025.pdf">Special Supplementary Results,School of Journalism and mass communication, BA(JMC), July, 2025, 08-08-2025 (Click Here)</a></li>
+              <li><a target="_blank" href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2025/08/LAW-Results-of-Special-Supplementary-Examiantions-July-2025.pdf">Special Supplementary Results,School of Law, July, 2025, 08-08-2025 (Click Here)</a></li>
+              <li><a target="_blank" href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2025/08/Special-Supplementary-Result-Computer-Science-July-2025-08-08-2025.pdf">Special Supplementary Result (CS) July-2025 (Click Here)</a></li></a></li>
+              <li><a target="_blank" href="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2025/08/Re-evualuation-Result-Computer-Science-May-2025-08-08-2025.xlsx.pdf">Re-evaluation Result (CS) May-2025 (Click Here)</a></li>
+              <li>24 Batch B.COM (COMPUTER APPLICATIONS), 2nd Sem JUNE, 2025, 30-07-2025</li>
+              <li>24 Batch B.SC (APPLIED NUTRITION AND PUBLIC HEALTH), 2nd Sem JUNE, 2025, 30-07-2025</li>
+              <li>24 Batch B.SC (HOTEL MANAGEMENT AND CATERING SCIENCE), 2nd Sem JUNE, 2025, 30-07-2025</li>
+              <li>24 Batch B.SC (FOOD SCIENCE & NUTRITION), 2nd Sem JUNE, 2025, 30-07-2025</li>
+              <li>24 Batch BBA (BUSINESS ANALYTICS), 2nd Sem JUNE, 2025, 30-07-2025</li>
+              <li>24 Batch BBA (TRAVEL AND TOURISM), 2nd Sem JUNE, 2025, 30-07-2025</li>
+              <li>24 Batch MBA (GENERAL) , 2nd Sem JUNE, 2025, 30-07-2025</li>
+              <li>24 batch MBA (HOTEL MANAGEMENT And TOURISM), 2nd sem june, 2025, 30-07-2025</li>
+              <li>23 Batch B.Com ( COMPUTER APPLICATIONS ), 4th Sem JUNE, 2025, 30-07-2025</li>
+              <li>23 Batch B.SC (APPLIED NUTRITION AND PUBLIC HEALTH), 4th Sem JUNE, 2025, 30-07-2025</li>
+              <li>23 Batch B.SC (HOTEL MANAGEMENT AND CATERING SCIENCE), 4th Sem JUNE, 2025, 30-07-2025</li>
+              <li>23 Batch BBA (BUSINESS ANALYTICS), 4th Sem JUNE, 2025, 30-07-2025</li>
+              <li>23 Batch BBA (GENERAL), 4th Sem JUNE, 2025, 30-07-2025</li>
+              <li>23 Batch BBA (TRAVEL AND TOURISM), 4th Sem JUNE, 2025, 30-07-2025</li>
+              <li>23 Batch MBA (GENERAL), 4th Sem JUNE, 2025, 30-07-2025</li>
+              <li>23 Batch MBA (HOTEL MANAGEMENT AND TOURISM), 4th Sem JUNE, 2025, 30-07-2025</li>
+              <li>22 Batch BSC (APPLIED NUTRITION AND PUBLIC HEALTH), 6th Sem JUNE, 2025, 29-07-2025</li>
+              <li>22 Batch BSC (FOOD AND NUTRITION ), 6th Sem JUNE, 2025, 29-07-2025</li>
+              <li>22 Batch BSC (HOTEL MANAGEMENT & CATERING SCIENCE), 6th Sem JUNE, 2025, 29-07-2025</li>
+              <li>22 Batch BBA (BUSINESS ANALYTICS), 6th Sem JUNE, 2025, 29-07-2025</li>
+              <li>22 Batch BBA (TRAVEL AND TOURISM), 6th Sem JUNE, 2025, 29-07-2025</li>
+              <li>22 Batch BBA (GENERAL) 6th Sem JUNE, 2025, 29-07-2025</li>
+              <li><a target="_blank" href="./contents/Result_Ph.D_Entrance_Examinations_June_2025.pdf">Result Ph.D Entrance Examinations June, 2025 (Click Here)</a></li>
+              <li>Pending BCA. 3 Year, Sem-VI, May-2025, 16-07-2025</li>
+              <li>Re-Evaluation Results,School of Commerce & Management, May, 2025, 14-07-2025</li>
+              <li><a target="_blank" href="./contents/Re_appear_Result_(May2025)_B.ED_AND_M.ED.pdf">Re-appear Result (May-2025) - B.ED AND M.ED (Click Here)</a></li>
+              <li><a target="_blank" href="./contents/Re_Appear_Result_May-2025_BA_(PSY).pdf">Re-Appear Result (May-2025) - BA (PSY), BA (ENG), BSCRMIT, BSCOTT, B.SC (PHY), B.SC (BIO-TECH), B.SC (AGRI.), M.PLAN, B.ARCH, FASHION DESIGN (Click Here)</a></li>
+              <li>BA(H)Psychology, 2nd Sem, May, 2025, 09-07-2025</li>
+              <li>BA(H)Psychology, 4th Sem, May, 2025, 09-07-2025</li>
+              <li>BA(H)English, 2nd Sem, May, 2025, 09-07-2025</li>
+              <li>BA(H)English, 4th Sem, May, 2025, 09-07-2025</li>
+              <li>MA-English, 2nd Sem, May, 2025, 09-07-2025</li>
+              <li>BA(P)English, 6th Sem, May, 2025, 09-07-2025</li>
+              <li>B.Sc.-Fashion Design, 2nd Sem, May, 2025, 09-07-2025</li>
+              <li>B.Sc.-RMIT, 4th Sem, May, 2025, 09-07-2025</li>
+              <li>B.Sc.(H)Bio-Technology, 2nd Sem, May, 2025, 09-07-2025</li>
+              <li>B.Sc.(H)Physics, 2nd Sem, May, 2025, 09-07-2025</li>
+              <li>B.Sc.(H)Chemistry, 2nd Sem, May, 2025, 09-07-2025</li>
+              <li>B.Sc.(H)Physics, 6th Sem, May, 2025, 09-07-2025</li>
+              <li>B.Sc.(H)Chemistry, 6th Sem, May, 2025, 09-07-2025</li>
+              <li>B.Sc.Interior Design, 6th Sem, May, 2025, 09-07-2025</li>
+              <li>BA(H)Product Design, 8th Sem, May, 2025, 09-07-2025</li>
+              <li>BA(H)Interior Design, 8th Sem, May, 2025, 09-07-2025</li>
+              <li>M.Plan, 4th Sem, May, 2025, 09-07-2025</li>
+              <li>M.Plan, 2nd Sem, May, 2025, 09-07-2025</li>
+              <li>B.Arch., 2nd Sem, May, 2025, 09-07-2025</li>
+              <li>B.Arch., 4th Sem, May, 2025, 09-07-2025</li>
+              <li>B. Design-Fashion Design, 8th Sem, May, 2025, 09-07-2025</li>
+              <li>B.Tech. 1st Year, Sem-II, May-2025, 10-07-2025</li>
+              <li>BCA. 2 Year, Sem-4, May-2025, 10-07-2025</li>
+              <li>Revised result B.Sc(CS) 3 Year, Sem-VI result, May-2025, 10-07-2025</li>
+              <li>M.Sc. Chemistry, 4th Sem, May, 2025, 11-07-2025</li>
+              <li>B.Sc.-MLT, 4th Sem, May, 2025, 11-07-2025</li>
+              <li><a target="_blank" href="./contents/BTech_1st_Sem_Re-Appear_result_may_2025.pdf">Re-appear result (B.Tech. Semester-I) May, 2025, 10-07-2025 (Click Here)</a></li>
+              <li>BBA(LV), 4th Sem, May, 2025, 08-07-2025</li>
+              <li>BBA(LD), 4th Sem, May, 2025, 08-07-2025</li>
+              <li>BCOM, 4th Sem, May, 2025, 08-07-2025</li>
+              <li>BBA(LV), 2nd Sem, May, 2025, 08-07-2025</li>
+              <li>BBA(LD), 2nd Sem, May, 2025, 08-07-2025</li>
+              <li>BCOM, 2nd Sem, May, 2025, 08-07-2025</li>
+              <li>MBA, 2nd Sem, May, 2025, 08-07-2025</li>
+              <li><a target="_blank" href="./contents/Re-Appear_Result_B_Pharma_May_2025.pdf">Re-appear Result of B.Pharm, May, 2025, 08-07-2025 (Click Here)</a></li>
+              <li><a target="_blank" href="./contents/Re-Appear_Result_D_Pharma_May_2025.pdf">Re-appear Result of D.Pharm, May, 2025, 08-07-2025 (Click Here)</a></li>
+              <li>BCA. 3 Year, Sem-VI, May-2025, 08-07-2025</li>
+              <li><a target="_blank" href="./contents/Re_Appear_result_B.Tech_CSE_ME_BCA_BSc(CS)_MCA_May-2025_08-07-2025.pdf">Re-appear result B.Tech. CSE, ME, BCA, BSc(CS), MCA, May- 2025, 08-07-2025 (Click here)</a></li>
+              <li><a target="_blank" href="./contents/All_Management_Re-appear_Result_May_2025.pdf">Re-appear Results,May, 2025, School of Commerce & Management, 03-07-2025 (Click Here)</a></li>
+              <li>Revised Result BCA Sem-III, result-II, December-2024, 02-07-2025</li>
+              <li>Advanced Diploma (DT), 2nd Sem, May, 2025, 03-07-2025</li>
+              <li>Advanced Diploma (EMT), 2nd Sem, May, 2025, 03-07-2025</li>
+              <li>Advanced Diploma (RMIT), 2nd Sem, May, 2025, 03-07-2025</li>
+              <li>Re-appear Result- Advanced Diploma (RMIT), May, 2025, 03-07-2025</li>
+              <li>Re-appear Result- Advanced Diploma (DT), May, 2025, 03-07-2025</li>
+              <li><a target="_blank" href="./contents/Law_result_Re-Appear_May_2025.pdf">Re-appear Results,School of Law, May, 2025, 02-07-2025 (Click here)</a></li>
+              <li>B.Sc(CS) 3 Year, Sem-VI result, May-2025</li>
+              <li>B.Tech. 2nd Year (CSE) Sem-IV result, May-2025</li>
+              <li>B.Tech. 4th Year (CSE) Sem-VIII result, May-2025</li>
+              <li>B.Pharm, 4th Sem, May, 2025, 30-06-2025</li>
+              <li>BCA Sem-2, result-II, May-2025, 26-06-2025</li>
+              <li>BCA Sem-6, result-II, May-2025, 26-06-2025</li>
+              <li>B.Tech. (ME) Sem-VI, 26-06-2025</li>
+              <li>BCA 2nd Sem, May, 2025, 24-06-2025</li>
+              <li>MCA 4th Sem, May, 2025, 24-06-2025</li>
+              <li>B.Tech CSE 3rd Year(VI Sem), May, 2025, 24-06-2025</li>
+              <li>M.Pharm, 2nd Sem, May, 2025, 20-06-2025</li>
+              <li>B.Pharm, 2nd Sem, May, 2025, 20-06-2025</li>
+              <li>BBA-LLB, 8th Sem, May, 2025, 20-06-2025</li>
+              <li>BBA-LLB, 6th Sem, May, 2025, 20-06-2025</li>
+              <li>BBA-LLB, 4th Sem, May, 2025, 20-06-2025</li>
+              <li>BBA-LLB, 2nd Sem, May, 2025, 20-06-2025</li>
+              <li>BA-LLB, 6th Sem, May, 2025, 20-06-2025</li>
+              <li>BA-LLB, 4th Sem, May, 2025, 20-06-2025</li>
+              <li>BA-LLB, 2nd Sem, May, 2025, 20-06-2025</li>
+              <li>LLB, 4th Sem, May, 2025, 20-06-2025</li>
+              <li>LLB, 2nd Sem, May, 2025, 20-06-2025</li>
+              <li>B.Pharm, 6th Sem, May 2025, 19-06-2025</li>
+              <li>B.Pharm, 8th Sem, May 2025, 19-06-2025</li>
+              <li>MCA 1 Year, Semester - II, May-2025 19-06-2025</li>
+              <li>M.Sc.(Physics), 2nd Sem, May, 2025, 17-06-2025</li>
+              <li>M.Sc.(Chemistry), 2nd Sem, May, 2025,17-06-2025</li>
+              <li>BA(English), 6th Sem, May, 2025, 17-06-2025</li>
+              <li>BA(Psychology), 6th Sem, May, 2025, 17-06-2025</li>
+              <li>BA(JMC), 2nd Sem, May, 2025,17-06-2025 (Revised Result)</li>
+              <li>B.Tech. (ME) Semester-VIII, May-2025</li>
+              <li>B.Sc (RMIT), 1st Sem. May, 2025, 11-06-2025</li>
+              <li>B.Sc (OTT), 1st Sem. May, 2025, 11-06-2025</li>
+              <li>MA (Psychology), 2nd Sem. May, 2025, 11-06-2025</li>
+              <li>B.Sc (Agriculture), 2nd Sem. May, 2025, 09-06-2025</li>
+              <li>B.Sc (Agriculture), 4th Sem. May, 2025, 09-06-2025</li>
+              <li>B.Sc (Agriculture), 6th Sem. May, 2025, 09-06-2025</li>
+              <li>B.Sc (RMIT), 2nd Sem. May, 2025, 09-06-2025</li>
+              <li>B.Sc (OTT), 2nd Sem. May, 2025, 09-06-2025</li>
+              <li>B.Com, 6th Sem, May, 2025, 06-06-2025</li>
+              <li>BA(JMC), 2nd Sem, May, 2025, 06-06-2025</li>
+              <li>BA(JMC), 6th Sem, May, 2025, 06-06-2025</li>
+              <li>BBA, 6th Sem, May, 2025, 06-06-2025</li>
+              <li>BBA-LLB, 10th Sem, May, 2025, 06-06-2025</li>
+              <li>BBA-MBA, 6th Sem, May, 2025, 06-06-2025</li>
+              <li>BBA-MBA, 8th Sem, May, 2025, 06-06-2025</li>
+              <li>LL.B, 6th Sem, May, 2025, 06-06-2025</li>
+              <li>LL.M, 2nd Sem, May, 2025, 06-06-2025</li>
+              <li>MBA, 4th Sem, May, 2025, 06-06-2025</li>
+              <li>Ph.D Course Work Examinations - April, 2025</li>
+            </ol>
+
+            <p><b>December 2024 Results:</b></p>
+            <ol>
+              <li>B.Sc., 1st Sem, December, 2024, 12-04-2025</li>
+              <li>B.Com, 1st Sem, December, 2024, 12-04-2025</li>
+              <li>BBA, 1st Sem, December, 2024, 12-04-2025</li>
+              <li>MBA, 1st Sem, December, 2024, 12-04-2025</li>
+              <li>B.Sc., 3rd Sem, December, 2024, 09-04-2025</li>
+              <li>B.Com, 3rd Sem, December, 2024, 09-04-2025</li>
+              <li>BBA, 3rd Sem, December, 2024, 09-04-2025</li>
+              <li>MBA, 3rd Sem, December, 2024, 09-04-2025</li>
+              <li>B.Sc., 5th Sem, December, 2024, 07-04-2025</li>
+              <li>BBA, 5th Sem, December, 2024, 07-04-2025</li>
+              <li> B.Tech.-CSE, 1st Sem, December, 2024, 19-02-2025</li>
+              <li> B.Tech.-ME, 1st Sem, December, 2024, 19-02-2025</li>
+              <li> B.Tech.-MAE, 1st Sem, December, 2024, 19-02-2025</li>
+              <li> BCA, 3rd Sem, December, 2024, 19-02-2025</li>
+              <li> BCA, 5th Sem, December, 2024, 19-02-2025</li>
+              <li> BA(H)English, 1st Sem, December, 2024, 19-02-2025</li>
+              <li> B.Sc.(H)Chemistry, 1st Sem, December, 2024, 19-02-2025</li>
+              <li> B.Sc.(H)Physics, 1st Sem, December, 2024, 19-02-2025</li>
+              <li> B.Sc.(H)Mathematics, 1st Sem, December, 2024, 19-02-2025</li>
+              <li> M.Sc. Physics, 1st Sem, December, 2024, 19-02-2025</li>
+              <li> B.Sc.(H)Physics, 5th Sem, December, 2024, 19-02-2025</li>
+              <li> BA(H)Product Design, 7th Sem, December, 2024, 19-02-2025</li>
+              <li> BA(H)Interior Design, 7th Sem, December, 2024, 19-02-2025</li>
+              <li> B.Sc. Interior Design, 5th Sem, December, 2024, 19-02-2025</li>
+              <li> B. Design- Fashion Design, 7th Sem, December, 2024, 19-02-2025</li>
+              <li> B.Sc.(H) Bio-Technology, 1st Sem, December, 2024, 19-02-2025</li>
+              <li>B.Sc.-RMIT, 1st Sem, December, 2024, 17-02-2025</li>
+              <li>B.Sc.-OTT, 1st Sem, December, 2024, 17-02-2025</li>
+              <li>B.Tech.-CSE, 5th Sem, December, 2024, 13-02-2025</li>
+              <li>B.Tech.-CSE, 3rd Sem, December, 2024, 13-02-2025</li>
+              <li>B.Sc.(MLT), 3rd Sem, December, 2024, 13-02-2025</li>
+              <li>B.Sc.(H)Agriculture, 3rd Sem, December, 2024, 13-02-2025</li>
+              <li>B.Sc.(H)Agriculture, 1st Sem, December, 2024, 13-02-2025</li>
+              <li>BA(H)English, 5th Sem, December, 2024, 13-02-2025</li>
+              <li>B.Sc.(H)Chemistry, 5th Sem, December, 2024, 13-02-2025</li>
+              <li>BCA, 1st Sem, December, 2024, 13-02-2025</li>
+              <li>B.Pharm., 5th Sem, December, 2024, 13-02-2025</li>
+              <li>B.Pharm., 1st Sem, December, 2024, 13-02-2025</li>
+              <li>B. Pharmacy, 7th Sem, December, 2024, 07-02-2025</li>
+              <li> M. Pharmacy, 1st Sem, December, 2024, 07-02-2025</li>
+              <li>BA(H)Psychology, 5th Sem, December, 2024, 07-02-2025</li>
+              <li>BA(H)Psychology, 3rd Sem, December, 2024, 07-02-2025</li>
+              <li>BA(H)Psychology, 1st Sem, December, 2024, 07-02-2025</li>
+              <li>BA(H)English, 5th Sem, December, 2024, 07-02-2025</li>
+              <li>MCA, 1st Sem, December, 2024, 07-02-2025</li>
+              <li>MCA, 3rd Sem, December, 2024, 07-02-2025</li>
+              <li>BBA-LLB, 9th Sem, December, 2024, 07-02-2025</li>
+              <li>BBA-LLB, 7th Sem, December, 2024, 07-02-2025</li>
+              <li>BBA-LLB, 5th Sem, December, 2024, 07-02-2025</li>
+              <li>BBA-LLB, 3rd Sem, December, 2024, 07-02-2025</li>
+              <li>BBA-LLB, 1st Sem, December, 2024, 07-02-2025</li>
+              <li>BA-LLB, 5th Sem, December, 2024, 07-02-2025</li>
+              <li>BA-LLB, 3rd Sem, December, 2024, 07-02-2025</li>
+              <li>BA-LLB, 1st Sem, December, 2024, 07-02-2025</li>
+              <li>LL.B, 5th Sem, December, 2024, 07-02-2025</li>
+              <li>LL.B, 3rd Sem, December, 2024, 07-02-2025</li>
+              <li>LL.B, 1st Sem, December, 2024, 07-02-2025</li>
+              <li>LL.M, 1st Sem, December, 2024, 07-02-2025</li>
+              <li>M.Plan, 1st Sem, December, 2024, 05-02-2025</li>
+              <li>B.Sc.(H) Agriculture, 5th Sem, December, 2024, 05-02-2025</li>
+              <li>BBA, 3rd Sem, December, 2024, 05-02-2025</li>
+              <li>BBA, 1st Sem, December, 2024, 05-02-2025</li>
+              <li>MBA, 1st Sem, December, 2024, 05-02-2025</li>
+              <li>B.Com, 1st Sem, December, 2024, 05-02-2025</li>
+              <li>B.Tech.-ME, 5th Sem, December, 2024, 05-02-2025</li>
+              <li>B.Tech.-ME, 7th Sem, December, 2024, 05-02-2025</li>
+              <li>MA-Psychology, 1st Sem, December, 2024, 05-02-2025</li>
+              <li>MA-English, 1st Sem, December, 2024, 05-02-2025</li>
+              <li>BA(H)English, 3rd Sem, December, 2024, 05-02-2025</li>
+              <li>M.Sc.-Chemistry, 1st Sem, December, 2024, 05-02-2025</li>
+              <li>B.Pharmacy, 3rd Sem, December, 2024, 05-02-2025</li>
+              <li>B. Arch., 1st Sem, December, 2024, 05-02-2025</li>
+              <li>BBA, 5th Sem, December, 2024, 31-01-2025</li>
+              <li>B.Voc., DT, 1st Sem, December, 2024, 31-01-2025</li>
+              <li>B.Voc., EMT, 1st Sem, December, 2024, 31-01-2025</li>
+              <li>B.Com, 5th Sem, December, 2024, 28-01-2025</li>
+              <li>M. Plan, 3rd Sem, December, 2024, 28-01-2025</li>
+              <li>B. Arch., 3rd Sem, December, 2024, 28-01-2025</li>
+              <li>B.Sc., RMIT, IIIrd Sem, December, 2024, 28-01-2025</li>
+              <li>B.Sc., Fashion Design Ist Sem, December, 2024, 28-01-2025</li>
+              <li>BA(JMC), 1st Sem, December, 2024, 24-01-2025</li>
+              <li>BA(JMC), 5th Sem, December, 2024, 24-01-2025</li>
+              <li>BA(JMC), Re-appear, December, 2024, 24-01-2025</li>
+              <li>BBA, 3rd Sem, December, 2024, 24-01-2025</li>
+              <li>BBA-MBA, 3rd Sem, December, 2024, 24-01-2025</li>
+              <li>MBA, 3rd Sem, December, 2024, 24-01-2025</li>
+              <li>BBA-MBA, 7th Sem, December, 2024, 24-01-2025</li>
+              <li>BBA-MBA, 9th Sem, December, 2024, 24-01-2025</li>
+              <li>B.Com, 3rd Sem, December, 2024, 24-01-2025</li>
+              <li>B.Tech. CSE, 7th Sem, December, 2024, 23-01-2025</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="result-table" class="mid mt-4" style="display: none">
+    <div id="container-box">
+      <div class="text-center">
+        <div class="logo">
+          <img
+            src="https://www.lingayasvidyapeeth.edu.in/sanmax/wp-content/uploads/2024/12/lingayasvidyapeethlogo.webp"
+            alt="logo" />
+        </div>
+        <div class="name">Lingaya's Vidyapeeth, Faridabad</div>
+        <div class="lvtag">(Formerly Lingaya's University)</div>
+        <div class="lvtag">
+          (Deemed to be University, Approved u/s 3 of UGC Act, 1956)
+        </div>
+        <div style="font-weight: 600; margin-top: 15px">ONLINE RESULT</div>
+      </div>
+      <div class="text-center mt-3">
+        <div id="pgname" style="font-weight: 600;font-size: 1.1em;"> </div>
+        <div id="dis" style="font-weight: 600;font-size: 0.8em;"></div>
+      </div>
+
+      <div class="text-left mt-3">
+        <ul class="result-info" style="margin-top: 10px">
+          <li>REGN.NO : <span style="font-weight: 600;" id="regn"></span></li>
+          <li>ROLL.NO : <span style="font-weight: 600;" id="roll"></span></li>
+          <li>NAME : <span style="font-weight: 600;" id="sname"></span></li>
+          <li>EXAMINATION : <span style="font-weight: 600;" id="exam"></span></li>
+          <li>FATHER'S NAME: <span style="font-weight: 600;" id="fname"></span></li>
+          <li>YEAR : <span style="font-weight: 600;" id="year"></span></li>
+          <li>MOTHER'S NAME: <span style="font-weight: 600;" id="mname"></span></li>
+          <li>SEMESTER : <span style="font-weight: 600;" id="sem"></span></li>
+        </ul>
+      </div>
+
+      <div id="result-box">
+        <table class="table table-bordered">
+          <tr class="text-center" style="background-color: #f48533; color: #fff">
+            <th>S.No</th>
+            <th>Course No.</th>
+            <th>Course Name</th>
+            <th>Credits</th>
+            <th>Grade Obtained</th>
+          </tr>
+                      <tr class="text-center">
+              <td id="row1">1</td>
+              <td id="code1"></td>
+              <td style="text-align: left;" id="sub1"></td>
+              <td id="credit1"></td>
+              <td id="grade1"></td>
+            </tr>
+                      <tr class="text-center">
+              <td id="row2">2</td>
+              <td id="code2"></td>
+              <td style="text-align: left;" id="sub2"></td>
+              <td id="credit2"></td>
+              <td id="grade2"></td>
+            </tr>
+                      <tr class="text-center">
+              <td id="row3">3</td>
+              <td id="code3"></td>
+              <td style="text-align: left;" id="sub3"></td>
+              <td id="credit3"></td>
+              <td id="grade3"></td>
+            </tr>
+                      <tr class="text-center">
+              <td id="row4">4</td>
+              <td id="code4"></td>
+              <td style="text-align: left;" id="sub4"></td>
+              <td id="credit4"></td>
+              <td id="grade4"></td>
+            </tr>
+                      <tr class="text-center">
+              <td id="row5">5</td>
+              <td id="code5"></td>
+              <td style="text-align: left;" id="sub5"></td>
+              <td id="credit5"></td>
+              <td id="grade5"></td>
+            </tr>
+                      <tr class="text-center">
+              <td id="row6">6</td>
+              <td id="code6"></td>
+              <td style="text-align: left;" id="sub6"></td>
+              <td id="credit6"></td>
+              <td id="grade6"></td>
+            </tr>
+                      <tr class="text-center">
+              <td id="row7">7</td>
+              <td id="code7"></td>
+              <td style="text-align: left;" id="sub7"></td>
+              <td id="credit7"></td>
+              <td id="grade7"></td>
+            </tr>
+                      <tr class="text-center">
+              <td id="row8">8</td>
+              <td id="code8"></td>
+              <td style="text-align: left;" id="sub8"></td>
+              <td id="credit8"></td>
+              <td id="grade8"></td>
+            </tr>
+                      <tr class="text-center">
+              <td id="row9">9</td>
+              <td id="code9"></td>
+              <td style="text-align: left;" id="sub9"></td>
+              <td id="credit9"></td>
+              <td id="grade9"></td>
+            </tr>
+                      <tr class="text-center">
+              <td id="row10">10</td>
+              <td id="code10"></td>
+              <td style="text-align: left;" id="sub10"></td>
+              <td id="credit10"></td>
+              <td id="grade10"></td>
+            </tr>
+                      <tr class="text-center">
+              <td id="row11">11</td>
+              <td id="code11"></td>
+              <td style="text-align: left;" id="sub11"></td>
+              <td id="credit11"></td>
+              <td id="grade11"></td>
+            </tr>
+                      <tr class="text-center">
+              <td id="row12">12</td>
+              <td id="code12"></td>
+              <td style="text-align: left;" id="sub12"></td>
+              <td id="credit12"></td>
+              <td id="grade12"></td>
+            </tr>
+                      <tr class="text-center">
+              <td id="row13">13</td>
+              <td id="code13"></td>
+              <td style="text-align: left;" id="sub13"></td>
+              <td id="credit13"></td>
+              <td id="grade13"></td>
+            </tr>
+                      <tr class="text-center">
+              <td id="row14">14</td>
+              <td id="code14"></td>
+              <td style="text-align: left;" id="sub14"></td>
+              <td id="credit14"></td>
+              <td id="grade14"></td>
+            </tr>
+                      <tr class="text-center">
+              <td id="row15">15</td>
+              <td id="code15"></td>
+              <td style="text-align: left;" id="sub15"></td>
+              <td id="credit15"></td>
+              <td id="grade15"></td>
+            </tr>
+          
+          <tr class="text-center">
+            <td colspan="3" style="font-weight: 600;text-align: end;">Total Credits</td>
+            <td id="total"></td>
+            <td id="sgpa" style=" font-weight: 600; "></td>
+          </tr>
+
+          <tr class="text-center">
+            <td colspan="3" style="font-weight: 600;text-align: end;">Credits Earned</td>
+            <td id="earn"></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="note">
+        <div id="datebox">
+          Date of Printing: <span id="date">19 February, 2026</span>
+        </div>
+        <div style="margin-top: 10px">
+          <p style="margin-bottom: 4px;">
+            <b style="text-decoration: underline;">Abbreviation:</b>
+          </p>
+          <ul class="abb">
+            <li>AB - Absent</li>
+            <li>CLD - Cancelled/UFM</li>
+            <li>DE - Detained</li>
+            <li>F - Fail</li>
+            <li>RL - Result Late</li>
+          </ul>
+        </div>
+        <div class="disclaimer" style="margin-top: 10px; text-align: justify;">
+          <p>
+            <b style="text-decoration: underline;">Disclaimer:</b> <br>
+            <span style="line-height: 0; "> The published result is provisional only. Lingaya's Vidyapeeth is not responsible for any inadvertent error that may have crept in the data/results being published online. This is being published just for the immediate information to the examinees. The final Grade Card / Mark Sheet(s) issued by Lingaya's Vidyapeeth will only be treated authentic & final in this regard</span>
+          </p>
+        </div>
+        <div class="text-center">
+          <input type="button" class="btn btn-sm btn-light" id="browserPrint" value="Print" />
+          <input type="button" class="btn btn-sm btn-light" id="backToResult" value="Go to result" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"47fc657bca4f452b900c4f2c2b636ff9","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+<script>
+  function downloadPDFWithBrowserPrint() {
+    $("#browserPrint").hide();
+    $("#backToResult").hide();
+    window.print();
+  }
+
+  window.onafterprint = function() {
+    $("#browserPrint").show();
+    $("#backToResult").show();
+  }
+
+  function showResultTab() {
+    $("#loginwindow").show();
+    // $("#footer").show();
+    $("#result-table").hide();
+    location.reload();
+  }
+
+  document
+    .querySelector("#browserPrint")
+    .addEventListener("click", downloadPDFWithBrowserPrint);
+
+  document
+    .querySelector("#backToResult")
+    .addEventListener("click", showResultTab);
+
+  $(document).ready(function() {
+
+    $("#loginwindow").show();
+    // $("#footer").show();
+
+    $.ajax({
+      type: "GET",
+      url: "get_examinations.php",
+      dataType: "html",
+      beforeSend: function() {
+        $("#examination").html('<option value="">Loading....!</option>');
+      },
+      success: function(data) {
+        $("#examination").html(data);
+      }
+    });
+
+    $.ajax({
+      type: "GET",
+      url: "get_semester.php",
+      dataType: "html",
+      beforeSend: function() {
+        $("#semester").html('<option value="">Loading....!</option>');
+      },
+      success: function(data) {
+        $("#semester").html(data);
+      }
+    });
+
+    $.ajax({
+      type: "GET",
+      url: "get_exam_type.php",
+      dataType: "html",
+      beforeSend: function() {
+        $("#examtype").html('<option value="">Loading....!</option>');
+      },
+      success: function(data) {
+        $("#examtype").html(data);
+      }
+    });
+  });
+
+  function loaderHide(data) {
+    $(".loader_9").hide();
+    $("#roll").html(data[0][2]);
+    $("#regn").html(data[0][3]);
+    $("#sname").html(data[0][4]);
+    $("#exam").html(data[0][12]);
+    $("#fname").html(data[0][5]);
+    $("#year").html(data[0][10]);
+    $("#mname").html(data[0][6]);
+    $("#pgname").html(data[0][7]);
+    $("#sem").html(data[0][11]);
+    // $("#date").html(data[0][13]);
+    $("#dis").html(data[0][8]);
+    $("#total").html(data[0][74]);
+    $("#earn").html(data[0][75]);
+    $("#sgpa").html("SGPA: " + data[0][76]);
+
+    var code = 14;
+    var sub = 29;
+    var grade = 44;
+    var credit = 59;
+    for (var i = 1; i <= 15; i++) {
+      if (data[0][code]) {
+        $("#code" + i).html(data[0][code]);
+        $("#sub" + i).html(data[0][sub]);
+        $("#grade" + i).html(data[0][grade]);
+        $("#credit" + i).html(data[0][credit]);
+      } else {
+        $("#row" + i).remove();
+        $("#code" + i).remove();
+        $("#sub" + i).remove();
+        $("#grade" + i).remove();
+        $("#credit" + i).remove();
+      }
+      code++;
+      sub++;
+      grade++;
+      credit++;
+    }
+
+    $("#result-table").show();
+    $("#sign").show();
+    $("#loginwindow").hide();
+    $("#footer").hide();
+    $("#result-form").find("input").val("");
+    $("#result-form").find("select").prop("selectedIndex", 0);
+  }
+
+  function loaderHide2() {
+    $(".loader_9").hide();
+    $("#msg").html("No result found!");
+    $("#result-table").hide();
+    $("#result-form").find("input").val("");
+    $("#result-form").find("select").prop("selectedIndex", 0);
+  }
+  $(document).on("submit", "#result-form", function(e) {
+    e.preventDefault();
+    $("#msg").html("");
+    var rollno = $("#rollno").val();
+    var regn = $("#regno").val();
+    var exam = $("#examination").val();
+    var sem = $("#semester").val();
+    var examtype = $("#examtype").val();
+    if (exam == "" || sem == "") {
+      $("#msg").html("Choose Examination / Semester!");
+    } else {
+      $(".loader_9").show();
+      var postData = {
+        rollno: rollno,
+        regn: regn,
+        exam: exam,
+        sem: sem,
+        examtype: examtype,
+      };
+      $.ajax({
+        method: "POST",
+        url: "process.php",
+        data: postData,
+        success: function(data) {
+          if (JSON.parse(data).result == "No result found") {
+            setTimeout(loaderHide2, 1500);
+          } else {
+            const dataP = JSON.parse(data);
+            setTimeout(function() {
+              loaderHide(dataP);
+            }, 1500);
+          }
+        },
+      });
+    }
+  });
+</script>
+
+</html>
