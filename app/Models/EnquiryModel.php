@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class EnquiryModel extends Model
 {
-    protected $table      = 'course_enquiries';
-    protected $primaryKey = 'id';
-    protected $allowedFields = ['name', 'email', 'phone', 'course', 'message', 'created_at'];
+    protected $table         = 'course_enquiries';
+    protected $primaryKey    = 'id';
+    protected $allowedFields = ['name', 'email', 'phone', 'course', 'message', 'created_at', 'updated_at'];
 }

@@ -30,14 +30,17 @@ $routes->post('certificate-download', 'HomeControllers::downloadCertificate', ['
 $routes->group("admin", ["filter" => "admin"], function ($routes) {
 
     $routes->get('testimonial', 'Admin\Testimonial::view_testimonial', ['as' => 'testimonial_list']);
+    $routes->get('testimonial/view', 'Admin\Testimonial::view_testimonial', ['as' => 'view_testimonial']);
 
     $routes->get('testimonial/add', 'Admin\Testimonial::add_testimonial', ['as' => 'testimonial_add']);
 
     $routes->post('testimonial/store', 'Admin\Testimonial::testimonialAction', ['as' => 'testimonial_store']);
+    $routes->post('testimonial/action', 'Admin\Testimonial::testimonialAction', ['as' => 'testimonialAction']);
 
     $routes->get('testimonial/edit/(:num)', 'Admin\Testimonial::edit_testimonial/$1', ['as' => 'testimonial_edit']);
 
     $routes->post('testimonial/update/(:num)', 'Admin\Testimonial::update_testimonial/$1', ['as' => 'testimonial_update']);
+    $routes->post('testimonial/update-action/(:num)', 'Admin\Testimonial::update_testimonial/$1', ['as' => 'update_testimonial']);
 
     $routes->get('testimonial/delete/(:num)', 'Admin\Testimonial::delete_testimonial/$1', ['as' => 'testimonial_delete']);
 });

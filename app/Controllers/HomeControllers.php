@@ -160,10 +160,31 @@ class HomeControllers extends BaseController
     public function gallery()
     {
         $data['pagetitle'] = 'Gallery';
-        $data['gallery'] = $this->galleryModel->findAll();
+        try {
+            $db = \Config\Database::connect();
+            $fields = $db->getFieldNames('gallery');
+            if (in_array('type', $fields, true)) {
+                $data['gallery'] = $this->galleryModel
+                    ->where('type !=', 'video')
+                    ->where('status !=', 0)
+                    ->notLike('image', '.mp4')
+                    ->notLike('image', '.webm')
+                    ->orderBy('id', 'DESC')
+                    ->findAll();
+            } else {
+                $data['gallery'] = $this->galleryModel
+                    ->notLike('image', '.mp4')
+                    ->notLike('image', '.webm')
+                    ->orderBy('id', 'DESC')
+                    ->findAll();
+            }
+        } catch (\Throwable $e) {
+            $data['gallery'] = $this->galleryModel->findAll();
+        }
 
         return view('web/gallery', $data);
     }
+
     public function germany()
     {
         $data['pagetitle'] = 'Germany';
@@ -171,6 +192,7 @@ class HomeControllers extends BaseController
 
         return view('web/germany', $data);
     }
+
     public function Partner()
     {
         $data['pagetitle'] = 'Partner';
@@ -179,13 +201,48 @@ class HomeControllers extends BaseController
         return view('web/partner', $data);
     }
 
-
-
-
-
     public function videogallery()
     {
-        return view('web/videogallery', ['pagetitle' => 'Video Gallery']);
+        $data['pagetitle'] = 'Video Gallery';
+        try {
+            $db = \Config\Database::connect();
+            $fields = $db->getFieldNames('gallery');
+            $builder = $this->galleryModel->builder();
+
+            if (in_array('type', $fields, true) && in_array('video_url', $fields, true)) {
+                $builder->groupStart()
+                    ->where('type', 'video')
+                    ->orWhere('video_url !=', '')
+                    ->orWhere('video_url IS NOT NULL')
+                    ->orLike('image', '.mp4')
+                    ->orLike('image', '.webm')
+                    ->orLike('image', '.mov')
+                    ->groupEnd();
+            } elseif (in_array('video_url', $fields, true)) {
+                $builder->groupStart()
+                    ->where('video_url !=', '')
+                    ->orWhere('video_url IS NOT NULL')
+                    ->orLike('image', '.mp4')
+                    ->orLike('image', '.webm')
+                    ->groupEnd();
+            } else {
+                $builder->groupStart()
+                    ->like('image', '.mp4')
+                    ->orLike('image', '.webm')
+                    ->groupEnd();
+            }
+
+            if (in_array('status', $fields, true)) {
+                $builder->where('status !=', 0);
+            }
+
+            $data['videos'] = $builder->orderBy('id', 'DESC')->get()->getResultArray();
+        } catch (\Throwable $e) {
+            log_message('error', 'Video gallery fetch error: ' . $e->getMessage());
+            $data['videos'] = [];
+        }
+
+        return view('web/videogallery', $data);
     }
 
     public function download_documents()

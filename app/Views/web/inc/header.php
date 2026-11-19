@@ -308,43 +308,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
               
               <div class="modal-body">
-                <form method="post" action="<?= base_url('enquiry/submit') ?>" id="enquiryForm" class="pt-md-2 form_transparent">
+                <form method="post" action="<?= base_url('enquiry/submit') ?>" id="headerEnquiryForm" class="pt-md-2 form_transparent">
                   <?= csrf_field() ?>
                   <div class="row">
                     <div class="form-group col-sm-12">
-                      <input required placeholder="Enter Name *" class="form-control" name="/name" type="text">
+                      <input required placeholder="Enter Name *" class="form-control" name="name" type="text">
                     </div>
                     <div class="form-group col-sm-12">
-                      <input required placeholder="Enter Email *" class="form-control" name="/email" type="email">
+                      <input required placeholder="Enter Email *" class="form-control" name="email" type="email">
                     </div>
                     <div class="form-group col-sm-12">
-                      <input required placeholder="Enter Phone No *" class="form-control" name="/phone" type="tel">
+                      <input required placeholder="Enter Phone No *" class="form-control" name="phone" type="tel" pattern="[0-9]{10}">
                     </div>
                     <div class="form-group col-sm-12">
-                      <select class="form-control" name="/course" required>
+                      <select class="form-control" name="course" required>
                         <option value="">Select Course</option>
                         <option value="Nursing Courses">Nursing Courses</option>
                         <option value="B-Voc">B-Voc</option>
                         <option value="M-Voc">M-Voc</option>
-                         <option value="OT">OT</option>
-                          <option value="Brit">BRIT</option>
-                           <option value="x-ray">X-RAY</option>
-                            <option value="Dmlt">DMLT</option>
-                             <option value="Bmlt">BMLT</option>
-                              <option value="Dialysis Technology">Dialysis Technology</option>
-                         <option value="GNM">GNM</option>
+                        <option value="OT">OT</option>
+                        <option value="BRIT">BRIT</option>
+                        <option value="X-RAY">X-RAY</option>
+                        <option value="DMLT">DMLT</option>
+                        <option value="BMLT">BMLT</option>
+                        <option value="Dialysis Technology">Dialysis Technology</option>
+                        <option value="GNM">GNM</option>
                       </select>
                     </div>
                     <div class="form-group col-sm-12">
-                      <textarea required placeholder="Message *" class="form-control" name="/message" rows="4"></textarea>
+                      <textarea required placeholder="Message *" class="form-control" name="message" rows="4"></textarea>
                     </div>
                     <div class="col-md-12">
-                      <button type="submit" title="Submit Your Message!" class="btn btn-block">Register Now</button>
+                      <button type="submit" id="headerEnquiryBtn" title="Submit Your Message!" class="btn btn-block">Register Now</button>
                     </div>
                   </div>
                 </form>
         
-                <div id="alert-msg" class="mt-3"></div>
+                <div id="header-modal-alert-msg" class="mt-3"></div>
         
                 <!-- Flash Messages -->
                 <?php if (session()->getFlashdata('errors')) : ?>
@@ -365,8 +365,68 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
 
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('headerEnquiryForm');
+            if (!form) return;
+            form.addEventListener('submit', function(e) {
+                if (window.jQuery) {
+                    e.preventDefault();
+                    var $ = window.jQuery;
+                    var $form = $(form);
+                    var $btn = $('#headerEnquiryBtn');
+                    var $alert = $('#header-modal-alert-msg');
+                    var origText = $btn.html();
 
-        <div class="modal fade lr_popup" id="onlinePayment" tabindex="-1" role="dialog" aria-hidden="true">
+                    $btn.prop('disabled', true).text('Submitting...');
+                    $alert.html('');
+
+                    $.ajax({
+                        url: $form.attr('action'),
+                        method: 'POST',
+                        data: $form.serialize(),
+                        dataType: 'json',
+                        success: function(res) {
+                            if (res && res.success) {
+                                $alert.html('<div class="alert alert-success">' + (res.message || 'Thank you! We will contact you shortly.') + '</div>');
+                                $form[0].reset();
+                                setTimeout(function() {
+                                    if (window.jQuery && $('#studyOnlineModal1').length) {
+                                        $('#studyOnlineModal1').modal('hide');
+                                    }
+                                    if (res.redirect) {
+                                        window.location.href = res.redirect;
+                                    }
+                                }, 1200);
+                            } else {
+                                var msg = res.message || 'Submission failed. Please check your inputs.';
+                                if (res.errors) {
+                                    msg += '<br>' + Object.values(res.errors).join('<br>');
+                                }
+                                $alert.html('<div class="alert alert-danger">' + msg + '</div>');
+                            }
+                        },
+                        error: function(xhr) {
+                            var msg = 'Unable to submit right now. Please try again.';
+                            if (xhr.responseJSON) {
+                                if (xhr.responseJSON.errors) {
+                                    msg = Object.values(xhr.responseJSON.errors).join('<br>');
+                                } else if (xhr.responseJSON.message) {
+                                    msg = xhr.responseJSON.message;
+                                }
+                            }
+                            $alert.html('<div class="alert alert-danger">' + msg + '</div>');
+                        },
+                        complete: function() {
+                            $btn.prop('disabled', false).html(origText);
+                        }
+                    });
+                }
+            });
+        });
+        </script>
+
+        <div class="modal fade lr_popup" id="onlinePayment"  tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                 <div class="modal-content border-0">
                     <div class="modal-body">

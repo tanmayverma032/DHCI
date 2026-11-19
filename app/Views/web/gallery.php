@@ -221,6 +221,16 @@
 <section class="gallery_section">
     <div class="container">
 
+        <!-- Navigation Tabs -->
+        <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 35px;">
+            <a href="<?= base_url('gallery') ?>" style="padding: 10px 28px; border-radius: 30px; font-weight: 600; font-size: 15px; text-decoration: none; border: 2px solid #0389c6; background: #0389c6; color: #fff; box-shadow: 0 4px 15px rgba(3, 137, 198, 0.3);">
+                <i class="fas fa-camera me-1"></i> Photo Gallery
+            </a>
+            <a href="<?= base_url('videogallery') ?>" style="padding: 10px 28px; border-radius: 30px; font-weight: 600; font-size: 15px; text-decoration: none; border: 2px solid #0389c6; background: #fff; color: #0389c6; transition: 0.3s ease;">
+                <i class="fas fa-video me-1"></i> Video Gallery
+            </a>
+        </div>
+
         <?php if (!empty($gallery)): ?>
 
             <ul class="gallery_grid">

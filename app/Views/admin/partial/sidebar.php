@@ -116,7 +116,7 @@
                         </li>
                         
                         <li>
-                          <a href="<?= site_url('admin/testimonial/view') ?>">View Testimonials</a>
+                          <a href="<?= site_url('admin/testimonial') ?>">View Testimonials</a>
                         </li>
                     </ul>  
                 </li>

@@ -1935,8 +1935,16 @@ $(document).ready(function () {
                         $alertBox.addClass('text-danger').text(msg);
                     }
                 },
-                error: function () {
-                    $alertBox.addClass('text-danger').text('Unable to submit right now. Please try again later.');
+                error: function (xhr) {
+                    var msg = 'Unable to submit right now. Please try again later.';
+                    if (xhr.responseJSON) {
+                        if (xhr.responseJSON.errors) {
+                            msg = Object.values(xhr.responseJSON.errors).join(' ');
+                        } else if (xhr.responseJSON.message) {
+                            msg = xhr.responseJSON.message;
+                        }
+                    }
+                    $alertBox.addClass('text-danger').text(msg);
                 },
                 complete: function () {
                     $btn.prop('disabled', false).html(originalBtnText);
